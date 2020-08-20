@@ -22,11 +22,11 @@ public class Solution_002 {
         }
         ListNode n1 = l1;
         ListNode n2 = l2;
-        ListNode result = null;
-        ListNode next = new ListNode(0);
-        int sum = 0;
+        ListNode result = new ListNode(-1);
+        ListNode next = new ListNode(-1);
         boolean flag = false;
-        while (n1 != null || n2 != null) {
+        while (n1 != null || n2 != null || flag) {
+            int sum = 0;
             if (n1 != null) {
                 sum += n1.val;
                 n1 = n1.next;
@@ -44,9 +44,14 @@ public class Solution_002 {
             } else {
                 flag = false;
             }
-            //TODO
-
-
+            next.val = sum;
+            if (result.next == null) {
+                result.next = next;
+            }
+            if (n1 != null || n2 != null || flag) {
+                next.next = new ListNode(-1);
+                next = next.next;
+            }
         }
         return result.next;
     }
