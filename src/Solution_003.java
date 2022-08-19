@@ -40,6 +40,7 @@ public class Solution_003 {
             start = Math.max(start, last[index] + 1);
             res   = Math.max(res, i - start + 1);
             last[index] = i;
+            System.out.println("i:"+i+" index:"+index+" start:"+start+" res:"+res);
         }
         return res;
 
@@ -68,7 +69,7 @@ public class Solution_003 {
     }
 
     public static void main(String[] args) {
-        String s = "pwwkew";
+        String s = "pwwkhfuadifhuahushauihfusdhcuiscnuisdbcsdubdysfgydsuhnaiojsiajdioadcniosdnuahdudhhfusihfeuishfiew";
         System.out.println("" + new Solution_003().lengthOfLongestSubstring(s));
 
 
